@@ -3,7 +3,7 @@
 End-to-end systematic equity investment pipeline: cross-sectional return prediction with an XGBoost/Random Forest ensemble, risk-constrained portfolio construction, and walk-forward backtesting with realistic transaction cost modelling.
 
 ![Python](https://img.shields.io/badge/python-3.11%2B-blue)
-![CI](https://github.com/<your-username>/systematic-investment/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/diegodurare/systematic-equity-engine/actions/workflows/ci.yml/badge.svg)
 
 ---
 
