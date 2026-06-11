@@ -1,0 +1,53 @@
+# Data — never commit price data or factor files
+prices_por_accion/
+data/
+out/
+*.csv
+*.parquet
+
+# Documentation source
+*.pdf
+*.docx
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+env/
+.env/
+.venv/
+
+# Secrets — never commit API keys or credentials
+.env
+env
+*.env.local
+*.env.*
+
+# Jupyter checkpoints (keep notebooks)
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Model artifacts
+*.joblib
+*.pkl
