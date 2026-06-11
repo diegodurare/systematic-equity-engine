@@ -6,7 +6,7 @@ factores: factores_con_score.csv
 fundamentals: fundamentals_completos.csv
 metadata: company_metadata.csv
 macros: null
-lookback_months: 24
+lookback_months: 36
 top_n: 20
 selection_band: 1.5
 delay_months: 1

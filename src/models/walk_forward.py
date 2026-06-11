@@ -74,9 +74,27 @@ class WalkForward:
 
             model = build_model(model_type)
             model.fit(x_train, y_train)
+            test = test.copy()
             test["y_pred"] = model.predict(x_test)
             results.append(test[["Date", "ticker", target_col, "y_pred"]])
 
         if not results:
             return pd.DataFrame(columns=["Date", "ticker", target_col, "y_pred"])
         return pd.concat(results, ignore_index=True)
+
+    def run_multiple(
+        self,
+        df: pd.DataFrame,
+        features: list[str],
+        target_col: str,
+        model_types: list[str],
+    ) -> dict[str, pd.DataFrame]:
+        """
+        Run walk-forward for multiple model types.
+
+        Returns a dict mapping model_type → predictions DataFrame. All predictions
+        are out-of-sample by construction (each fold trains on [t-lookback, t) and
+        predicts t → t+1). The returned predictions are used by the ensemble
+        calibration step to derive optimal blending weights.
+        """
+        return {mt: self.run(df, features, target_col, mt) for mt in model_types}
